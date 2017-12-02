@@ -5,15 +5,27 @@
 body {
 	font-family: $base;
 	font-weight: 400;
+	color: $grey_dark;
 }
 
 .workspace {
 	margin: 0 auto;
-	max-width: 960px;
+	max-width: 940px;
 	overflow: hidden;
 	@media(max-width: $tablet) {
 		padding: 0 15px;
 	}
+}
+
+.section_padding {
+	padding: 70px 0;
+	@media(max-width: $tablet) {
+		padding: 40px 0;
+	}
+}
+
+.text-center {
+	text-align: center;
 }
 
 h1,
@@ -24,6 +36,30 @@ h1,
 	letter-spacing: 1px;
 	@media(max-width: $big-mobile) {
 		font-size: 22px;
+	}
+}
+
+h2,
+.h2 {
+	font-family: $title;
+	font-weight: 900;
+	font-size: 22px;
+	letter-spacing: 1px;
+	color: $violet_grey_dark;
+	margin-bottom: 15px;
+	@media(max-width: $big-mobile) {
+		font-size: 18px;
+	}
+}
+
+.subtitle {
+	font-family: $title;
+	font-size: 14px;
+	color: $violet_grey;
+	text-align: center;
+	letter-spacing: 1px;
+	&.after_line {
+		padding-bottom: 20px;
 	}
 }
 
@@ -47,6 +83,11 @@ p {
 		bottom: 0;
 		transform: translate(-50%, 0);
 	}
+	&.grey {
+		&:after {
+			background-color: $grey;
+		}
+	}
 }
 
 .header {
@@ -64,14 +105,15 @@ p {
 		float: right;
 		padding: 20px 0;
 		.item {
-			display: inline-block;
-			font-size: 13px;
-			font-weight: 900;
 			text-transform: uppercase;
 			color: $white;
 			text-decoration: none;
-			margin-left: 20px;
-			letter-spacing: 1.1px;
+			display: inline-block;
+			font-size: 12px;
+			font-weight: 900;
+			color: #fff;
+			margin-left: 23px;
+			letter-spacing: 1px;
 			transition: color 0.3s;
 			@media(max-width: $big-mobile) {
 				font-size: 10px;
@@ -131,7 +173,8 @@ p {
 	&.slick-dotted.slick-slider {
 		margin-bottom: 0;
 	}
-	.slick-list, .slick-track {
+	.slick-list,
+	.slick-track {
 		height: 100%;
 	}
 	.item {
@@ -236,13 +279,14 @@ p {
 .slick-dots {
 	width: 100%;
 	position: absolute;
-	bottom: 75px;
+	bottom: 70px;
 	left: 0;
 	li {
-		width: 13px;
-		height: 13px;
+		width: 10px;
+		height: 10px;
 		border: 1px solid $turquoise;
 		border-radius: 50%;
+		margin: 0 3px;
 		&.slick-active {
 			background-color: $turquoise;
 		}
@@ -257,5 +301,91 @@ p {
 	}
 	@media(max-width: $tablet) {
 		bottom: 30px;
+	}
+}
+
+.infographics {
+	font-size: 0;
+	vertical-align: top;
+	padding-top: 40px;
+	.item {
+		display: inline-block;
+		width: 33.33%;
+		padding: 40px 30px;
+		border-right: 1px solid $grey;
+		border-bottom: 1px solid $grey;
+		.img {
+			min-height: 55px;
+		}
+		.title {
+			color: $violet_grey_dark;
+			text-transform: uppercase;
+			font-weight: 700;
+			font-size: 14px;
+			margin-bottom: 20px;
+			padding-top: 28px;
+		}
+		.text {
+			font-size: 14px;
+			font-family: $base;
+			font-weight: 300;
+			line-height: 1.5;
+		}
+		&:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+		@media(min-width: $tablet) {
+			&:first-of-type {
+				border-right: 1px solid $grey;
+				border-bottom: 1px solid $grey;
+			}
+			&:nth-of-type(3n) {
+				border-right: none;
+			}
+
+			&:nth-of-type(n+1) {
+				border-bottom: 1px solid $grey;
+				@media(max-width: $s_mobile) {
+					border-bottom: none;
+				}
+			}
+			&:nth-of-type(n+2) {
+				border-bottom: 1px solid $grey;
+				@media(max-width: $s_mobile) {
+					border-bottom: none;
+				}
+			}
+
+			&:nth-of-type(n+4) {
+				border-bottom: none;
+				@media(max-width: $tablet) {
+					border-bottom: none;
+				}
+			}
+		}
+		@media(min-width: $s_mobile) and(max-width: $tablet) {
+			&:nth-of-type(2n) {
+				border-right: none;
+			}
+			&:nth-of-type(n+5) {
+				border-bottom: none;
+			}
+		}
+		@media(max-width: $s_mobile) {
+			&:nth-of-type(n) {
+				border-right: none;
+			}
+			&:nth-of-type(6) {
+				border-bottom: none;
+			}
+		}
+		@media(max-width: $tablet) {
+			width: 50%;
+		}
+		@media(max-width: $s_mobile) {
+			width: 100%;
+		}
 	}
 }

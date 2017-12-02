@@ -3,6 +3,15 @@ include temp/header.pug
 	- slider_cont_arr.push({'title': 'We Are Awesome Creative Agency', "text": "This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.", "url":"#1"} )
 	- slider_cont_arr.push({'title': 'We Are Awesome Creative Agency', "text": "This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.", "url":"#2"})
 	- slider_cont_arr.push({'title': 'We Are Awesome Creative Agency', "text": "This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.", "url":"#3"})
+	- slider_cont_arr.push({'title': 'We Are Awesome Creative Agency', "text": "This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.", "url":"#3"})
+	
+	- var infg_arr = []
+	- infg_arr.push({'title': 'WEB DESIGN & DEVELOPMENT', "text": "This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.", "url":"/images/s1.png"} )
+	- infg_arr.push({'title': 'BRANDING IDENTITY', "text": "This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.", "url":"/images/s2.png"})
+	- infg_arr.push({'title': 'MOBILE APP', "text": "This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.", "url":"/images/s3.png"})
+	- infg_arr.push({'title': 'SEARCH ENGINE OPTIMIZATION', "text": "This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.", "url":"/images/s4.png"})
+	- infg_arr.push({'title': 'GAME DEVELOPMENT', "text": "This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.", "url":"/images/s5.png"})
+	- infg_arr.push({'title': 'MADE WITH LOVE', "text": "This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.", "url":"/images/s6.png"})
 .title_slider(style="background-image:url(/images/bnr_bg.jpg)")
 	each item, index in slider_cont_arr
 		.item
@@ -10,4 +19,14 @@ include temp/header.pug
 				.h1.after_line= item.title
 				p= item.text
 				a(href=""+item.url+"").btn learn more
+.workspace.section_padding.text-center
+	h2 EXPERTISE
+	.subtitle.after_line.grey Lorem ipsum dolor sit amet proin gravida nibh vel velit
+	.infographics
+		each infg_item, index in infg_arr
+			.item
+				.img
+					img(src=""+infg_item.url+"")
+				.title= infg_item.title
+				.text= infg_item.text
 include temp/footer.pug
