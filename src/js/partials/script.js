@@ -11,4 +11,9 @@ $(function () {
 			flag_menu = 0;
 		}
 	});
+	$('.title_slider').slick({
+		infinite: true,
+		slidesToShow: 1,
+		dots: true
+	});
 });

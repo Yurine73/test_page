@@ -127,10 +127,21 @@ p {
 	height: 100vh;
 	max-height: 670px;
 	position: relative;
+	overflow: hidden;
+	&.slick-dotted.slick-slider {
+		margin-bottom: 0;
+	}
+	.slick-list, .slick-track {
+		height: 100%;
+	}
 	.item {
 		width: 100%;
 		height: 100%;
 		color: $white;
+		position: relative;
+		&:focus {
+			outline: none;
+		}
 		.slider_content {
 			padding-top: 20px;
 			position: absolute;
@@ -219,5 +230,32 @@ p {
 				bottom: 7px;
 			}
 		}
+	}
+}
+
+.slick-dots {
+	width: 100%;
+	position: absolute;
+	bottom: 75px;
+	left: 0;
+	li {
+		width: 13px;
+		height: 13px;
+		border: 1px solid $turquoise;
+		border-radius: 50%;
+		&.slick-active {
+			background-color: $turquoise;
+		}
+		button {
+			width: 100%;
+			height: 100%;
+			padding: 0;
+			&:before {
+				display: none;
+			}
+		}
+	}
+	@media(max-width: $tablet) {
+		bottom: 30px;
 	}
 }

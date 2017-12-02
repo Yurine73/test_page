@@ -1,10 +1,13 @@
 include temp/header.pug
+	- var slider_cont_arr = []
+	- slider_cont_arr.push({'title': 'We Are Awesome Creative Agency', "text": "This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.", "url":"#1"} )
+	- slider_cont_arr.push({'title': 'We Are Awesome Creative Agency', "text": "This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.", "url":"#2"})
+	- slider_cont_arr.push({'title': 'We Are Awesome Creative Agency', "text": "This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.", "url":"#3"})
 .title_slider(style="background-image:url(/images/bnr_bg.jpg)")
-	.item
-		.slider_content
-			.h1.after_line.
-				We Are Awesome Creative Agency
-			p.
-				This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.
-			a(href="#").btn learn more
+	each item, index in slider_cont_arr
+		.item
+			.slider_content
+				.h1.after_line= item.title
+				p= item.text
+				a(href=""+item.url+"").btn learn more
 include temp/footer.pug
