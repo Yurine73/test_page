@@ -1,11 +1,10 @@
-doctype
-html(lang="ru")
-	head
-		meta(charset="utf-8")
-		meta(name="viewport" content="width=device-width, initial-scale=1")
-		title= "Creative Agency"
-		link(rel='stylesheet', href='css/main.css', type='text/css' )
-	body
-	footer
-		script(src='https://code.jquery.com/jquery-3.2.1.min.js')
-		script(src='js/main.js')
+include temp/header.pug
+.title_slider(style="background-image:url(/images/bnr_bg.jpg)")
+	.item
+		.slider_content
+			.h1.after_line.
+				We Are Awesome Creative Agency
+			p.
+				This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.
+			a(href="#").btn learn more
+include temp/footer.pug
