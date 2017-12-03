@@ -18,7 +18,8 @@ body {
 }
 
 .section_padding {
-	padding: 70px 0;
+	padding-top: 70px;
+	padding-bottom: 55px;
 	@media(max-width: $tablet) {
 		padding: 40px 0;
 	}
@@ -45,8 +46,8 @@ h2,
 	font-weight: 900;
 	font-size: 22px;
 	letter-spacing: 1px;
-	color: $violet_grey_dark;
 	margin-bottom: 15px;
+	color: $violet_grey_dark;
 	@media(max-width: $big-mobile) {
 		font-size: 18px;
 	}
@@ -55,9 +56,11 @@ h2,
 .subtitle {
 	font-family: $title;
 	font-size: 14px;
-	color: $violet_grey;
 	text-align: center;
 	letter-spacing: 1px;
+	&.gray_color {
+		color: $violet_grey;
+	}
 	&.after_line {
 		padding-bottom: 20px;
 	}
@@ -67,6 +70,8 @@ p {
 	line-height: 2;
 	font-size: 13px;
 	letter-spacing: 1px;
+	font-family: $base;
+	font-weight: 300;
 }
 
 .after_line {
@@ -87,6 +92,14 @@ p {
 		&:after {
 			background-color: $grey;
 		}
+	}
+}
+
+.white_font_color {
+	color: $white;
+	h2,
+	.h2 {
+		color: $white;
 	}
 }
 
@@ -180,7 +193,6 @@ p {
 	.item {
 		width: 100%;
 		height: 100%;
-		color: $white;
 		position: relative;
 		&:focus {
 			outline: none;
@@ -213,12 +225,14 @@ p {
 
 .btn {
 	min-width: 120px;
+	text-align: center;
 	font-weight: 900;
 	text-transform: uppercase;
 	color: $turquoise;
 	border: 1px solid $turquoise;
 	border-radius: 3px;
 	display: inline-block;
+	padding: 0 15px;
 	padding-top: 12px;
 	padding-bottom: 12px;
 	font-size: 16px;
@@ -386,6 +400,60 @@ p {
 		}
 		@media(max-width: $s_mobile) {
 			width: 100%;
+		}
+	}
+}
+
+.team_section {
+	background-position: center;
+	background-size: cover;
+	font-size: 0;
+	vertical-align: top;
+	.btn {
+		margin-top: 20px;
+	}
+}
+
+.team_box {
+	margin-right: -10px;
+	margin-left: -10px;
+	margin-top: 45px;
+	margin-bottom: 50px;
+	@media(max-width: $tablet) {
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+	.team {
+		display: inline-block;
+		text-align: center;
+		margin: 0 10px;
+		margin-bottom: 20px;
+		@media(max-width: $s_mobile) {
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+		.ava {
+			width: 220px;
+			height: 230px;
+			margin: 0 auto;
+			@extend .team_section;
+		}
+		.text_info {
+			border: 1px solid $grey;
+			border-top: none;
+			padding: 20px 15px;
+			.name {
+				font-size: 14px;
+				font-weight: 700;
+				margin-bottom: 7px;
+				text-transform: uppercase;
+			}
+			.text {
+				text-transform: uppercase;
+				font-size: 13px;
+				font-weight: 300;
+			}
 		}
 	}
 }
