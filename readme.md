@@ -8,3 +8,8 @@ src - исходный код
 	images - картинки
 	js - скрипты
 build - сборка
+
+_________
+
+Разработка на системе Win10, Google Chrome
+Тестирование - Win10, Chrome, Opera, firefox, edge
