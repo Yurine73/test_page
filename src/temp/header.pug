@@ -4,26 +4,26 @@ html(lang="ru")
 		meta(charset="utf-8")
 		meta(name="viewport" content="width=device-width, initial-scale=1")
 		title= "Creative Agency"
-		link(rel='stylesheet', href='css/main.css', type='text/css' )
+		link(rel='stylesheet', href='./css/main.css', type='text/css' )
 		link(href="https://fonts.googleapis.com/css?family=Roboto:100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet")
 		link(href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet")
 		link(href="https://fonts.googleapis.com/css?family=Hammersmith+One" rel="stylesheet")
 	.workspace
 		- var menu_item_arr = []
-		- menu_item_arr.push({'manu_name': 'home'})
-		- menu_item_arr.push({'manu_name': 'about'})
-		- menu_item_arr.push({'manu_name': 'expertise'})
-		- menu_item_arr.push({'manu_name': 'teams'})
-		- menu_item_arr.push({'manu_name': 'works'})
-		- menu_item_arr.push({'manu_name': 'people say'})
-		- menu_item_arr.push({'manu_name': 'contact'})
+		- menu_item_arr.push({'manu_name': 'home', "url":"#"})
+		- menu_item_arr.push({'manu_name': 'about', "url":"#about"})
+		- menu_item_arr.push({'manu_name': 'expertise', "url":"#expertise"})
+		- menu_item_arr.push({'manu_name': 'teams', "url":"#teams"})
+		- menu_item_arr.push({'manu_name': 'works', "url":"#works"})
+		- menu_item_arr.push({'manu_name': 'people say', "url":"#"})
+		- menu_item_arr.push({'manu_name': 'contact', "url":"#contact"})
 		.header
 			.workspace
 				.logo
-					img(src="/images/logo.png" alt="")
+					img(src="./images/logo.png" alt="")
 				.menu
 					each item, index in menu_item_arr
-						a(href="#").item= item.manu_name
+						a(href=""+item.url+"").item= item.manu_name
 				.burger
 					span
 					span

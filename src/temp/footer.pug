@@ -1,12 +1,12 @@
 - var sotial_arr = ["images/fb.png", "images/tw.png", "images/drb.png", "images/inst.png", "images/gpls.png", "images/ytb.png"];
 - var footer_menu_arr = ["help", "TERMS & CONDITION", "PRIVACY"];
 footer
-	.footer.white_font_color
+	section#contact.footer.white_font_color
 		.workspace
 			.column_box.column_width_33_desct
 				.column
 					.logo
-						img(src="/images/logo.png" alt="")
+						img(src="./images/logo.png" alt="")
 					p.
 						lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh elit. Duis sed odio sit amet auctror a ornare odio non mauris vitae erat in elit
 				.column.pad_left_tablet
@@ -14,12 +14,12 @@ footer
 					.infographics.horizontal
 						.item
 							.img
-								img(src="/images/pin.png" alt="")
+								img(src="./images/pin.png" alt="")
 							.text.
 								Ruko cucruk, Jl. Radio luar dalem jos No.12 - 13, Kalideres - Jakarta Barat 11480 - Indonesia
 						.item
 							.img
-								img(src="/images/tel.png" alt="")
+								img(src="./images/tel.png" alt="")
 							.text
 								a(href="tel:+622122243333") (+62) 21-2224 3333
 				.column.form_column
@@ -29,7 +29,7 @@ footer
 						input(type="submit" value="")
 					.sotial
 						each sotial_item, index in sotial_arr
-							.item(style="background-image:url("+sotial_item+")")
+							a(herf="#").item(style="background-image:url(./"+sotial_item+")")
 			.column_box.mt-15
 				.column
 					.menu
@@ -40,4 +40,4 @@ footer
 						p.
 							Copyright © 2015 - Tajem Creative
 	script(src='https://code.jquery.com/jquery-3.2.1.min.js')
-	script(src='js/main.js')
+	script(src='./js/main.js')

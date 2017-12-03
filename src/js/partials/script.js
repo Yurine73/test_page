@@ -17,11 +17,33 @@ $(function () {
 		dots: true
 	});
 	$(".gallery .item").fancybox();
-	$(window).scroll(function(){
-		if($(window).scrollTop() > $(".title_slider ").height()) {
+	$('a[href^="#"]').click(function () {
+		var el = $(this).attr('href');
+		$('body, html').animate({
+			scrollTop: $(el).offset().top -50
+		}, 1000);
+	});
+	$(window).scroll(function () {
+		if ($(window).scrollTop() > $(".title_slider ").height()) {
 			$(".header").addClass("on_fixed");
 		} else {
 			$(".header").removeClass("on_fixed");
 		}
+		menu_url_section();
 	});
 });
+
+function menu_url_section() {
+	var $sections = $('section');
+	$sections.each(function (i, el) {
+		var top = $(el).offset().top - 100;
+		var bottom = top + $(el).height();
+		var scroll = $(window).scrollTop();
+		var id = $(el).attr('id');
+		if (scroll > top && scroll < bottom) {
+			$('.menu a.active').removeClass('active');
+			$('.menu a[href="#' + id + '"]').addClass('active');
+
+		}
+	})
+}
