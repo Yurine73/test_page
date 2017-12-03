@@ -1,7 +1,8 @@
-@import "partials/fonts";
-@import "partials/variables";
-@import "partials/mixin";
 @import "lib/normalize-reset";
 @import "lib/slick";
 @import "lib/slick-theme";
+@import "lib/jquery.fancybox";
+@import "partials/variables";
+@import "partials/mixin";
+@import "partials/fonts";
 @import "partials/index";

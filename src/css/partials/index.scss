@@ -4,8 +4,10 @@
 
 body {
 	font-family: $base;
+	font-size: 14px;
 	font-weight: 400;
 	color: $grey_dark;
+	overflow-x: hidden;
 }
 
 .workspace {
@@ -48,6 +50,7 @@ h2,
 	letter-spacing: 1px;
 	margin-bottom: 15px;
 	color: $violet_grey_dark;
+	text-transform: uppercase;
 	@media(max-width: $big-mobile) {
 		font-size: 18px;
 	}
@@ -63,6 +66,41 @@ h2,
 	}
 	&.after_line {
 		padding-bottom: 20px;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	transition: color 0.3s;
+	&:hover {
+		color: $turquoise;
+	}
+	&.pointer_arrow {
+		float: right;
+		position: relative;
+		padding-right: 20px;
+		word-spacing: -2px;
+		letter-spacing: 1px;
+		&:after {
+			content: "";
+			width: 20px;
+			height: 25px;
+			display: block;
+			position: absolute;
+			right: 0px;
+			top: 50%;
+			transform: translate(0, -50%);
+			background-image: url(/images/arrow.png);
+			background-position: center;
+			background-repeat: no-repeat;
+			transition: right 0.3s;
+		}
+		&:hover {
+			&:after {
+				right: -5px;
+			}
+		}
 	}
 }
 
@@ -171,6 +209,23 @@ p {
 				opacity: 1;
 				visibility: visible;
 			}
+		}
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		z-index: -1;
+		background-color: $blue;
+		opacity: 0;
+		transition: opacity 0.3s;
+	}
+	&.on_fixed {
+		&:after {
+			opacity: 0.8;
 		}
 	}
 }
@@ -409,6 +464,9 @@ p {
 	background-size: cover;
 	font-size: 0;
 	vertical-align: top;
+	@media(min-width: $tablet) {
+		padding-bottom: 65px;
+	}
 	.btn {
 		margin-top: 20px;
 	}
@@ -453,6 +511,67 @@ p {
 				text-transform: uppercase;
 				font-size: 13px;
 				font-weight: 300;
+			}
+		}
+	}
+}
+
+.works_section {
+	h2 {
+		display: inline-block;
+	}
+	.gallery_box {
+		text-align: center;
+		margin-top: 50px;
+		.btn {
+			min-width: 140px;
+			margin-top: 70px;
+		}
+	}
+}
+
+.gallery {
+	height: 400px;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	.item_group {
+		width: 16.66%;
+		flex-basis: 16.66%;
+		@media(max-width: $tablet) {
+			width: 33.33%;
+			flex-basis: 33.33%;
+		}
+		@media(max-width: $s_mobile) {
+			width: 50%;
+			flex-basis: 50%;
+		}
+		.item {
+			width: 100%;
+			height: 50%;
+			display: block;
+			background-position: center;
+			background-size: cover;
+			position: relative;
+			&:after {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: $violet_grey_dark;
+				opacity: 0.5;
+				z-index: 5;
+				transition: all 0.3s;
+			}
+			&:hover {
+				cursor: pointer;
+				&:after {
+					opacity: 0;
+				}
 			}
 		}
 	}

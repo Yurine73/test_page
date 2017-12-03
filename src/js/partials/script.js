@@ -1,7 +1,7 @@
 var flag_menu;
 $(function () {
-	$(".burger").on("click", function(){
-		if(!flag_menu == 1) {
+	$(".burger").on("click", function () {
+		if (!flag_menu == 1) {
 			$(this).addClass("active");
 			$(".menu").addClass("open");
 			flag_menu = 1;
@@ -15,5 +15,13 @@ $(function () {
 		infinite: true,
 		slidesToShow: 1,
 		dots: true
+	});
+	$(".gallery .item").fancybox();
+	$(window).scroll(function(){
+		if($(window).scrollTop() > $(".title_slider ").height()) {
+			$(".header").addClass("on_fixed");
+		} else {
+			$(".header").removeClass("on_fixed");
+		}
 	});
 });

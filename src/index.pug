@@ -50,5 +50,21 @@ include temp/header.pug
 		p.
 			Become part of our dream team, let’s join us !
 		a(href="#").btn WE ARE HIRING
-		
+.works_section.section_padding
+	.workspace
+		h2 our works
+		a(href="#").pointer_arrow See All Project in dribbble
+	mixin gallery_group
+		.item_group
+			a(href="/images/02-Creative-Agency.png" data-fancybox="gallery").item(style="background-image:url(/images/02-Creative-Agency.png)")
+			a(href="/images/02-Creative-Agency.png" data-fancybox="gallery").item(style="background-image:url(/images/02-Creative-Agency.png)")
+	.gallery_box
+		.gallery
+			+gallery_group
+			+gallery_group
+			+gallery_group
+			+gallery_group
+			+gallery_group
+			+gallery_group
+		a(href="#").btn.more load more
 include temp/footer.pug
